@@ -14,9 +14,12 @@ typedef struct Nums{
 	int *num;
 }Nums;
 
-int main(){
-	int num[1000], i = 0;
-	while(i < 1000 && scanf("%d", &num[i])>0) i++;
+int main(int argc, char** argv){
+	int num[argc-1], i = 0;
+	while(i < argc-1){
+		num[i] = atoi(argv[i+1]);
+		i++;
+	}
 	Nums nums;
 	nums.size = i;
 	nums.num = num;
